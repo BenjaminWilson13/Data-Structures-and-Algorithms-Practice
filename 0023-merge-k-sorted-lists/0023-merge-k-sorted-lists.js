@@ -19,12 +19,12 @@ var mergeKLists = function(lists) {
     }
     console.log(array);
     if (!array.length) return null;  
-    sortedArray = array.sort((a, b) => a - b); 
+    array.sort((a, b) => a - b); 
 
-    const head = new ListNode(sortedArray[0]); 
+    const head = new ListNode(array[0]); 
     let node = head; 
-    for (let i = 1; i < sortedArray.length; i++) {
-        node.next = new ListNode(sortedArray[i])
+    for (let i = 1; i < array.length; i++) {
+        node.next = new ListNode(array[i])
         node = node.next; 
     }
     return head; 
