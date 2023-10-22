@@ -4,19 +4,11 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-    nums.sort((a, b) => {
-        if (b === val) {
-            return -1; 
-        } else {
-            return 0; 
-        }
-    })
-    let count = 0; 
-    for (let element of nums) {
-        if (element !== val) {
-            count++; 
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === val) {
+            nums.splice(i, 1);
+            i--;  
         }
     }
-    return count; 
-    console.log(nums)
+    return nums.length; 
 };
